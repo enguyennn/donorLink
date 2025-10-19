@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DonorLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#2563eb',
+                        'brand-green': '#16a34a',
+                    },
+                    fontFamily: {
+                       sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <style>
+      /* A little global style for better focus rings and a smoother font */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      *:focus-visible {
+        outline: 2px solid #2563eb !important;
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+       /* Custom Leaflet Popup Styles */
+      .custom-leaflet-popup .leaflet-popup-content-wrapper {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 0;
+        border: none;
+      }
+      .custom-leaflet-popup .leaflet-popup-content {
+        margin: 0;
+        padding: 16px;
+        font-family: 'Inter', sans-serif;
+        min-width: 250px;
+        width: auto !important;
+      }
+      .custom-leaflet-popup .leaflet-popup-tip-container {
+        width: 40px;
+        height: 20px;
+      }
+      .custom-leaflet-popup .leaflet-popup-tip {
+        background: #ffffff;
+        border: none;
+        box-shadow: none;
+      }
+      .custom-leaflet-popup .leaflet-popup-close-button {
+        color: #9ca3af;
+        top: 12px;
+        right: 12px;
+        padding: 4px;
+        border-radius: 9999px;
+        background-color: #f3f4f6;
+        transition: all 0.2s ease-in-out;
+      }
+      .custom-leaflet-popup .leaflet-popup-close-button:hover {
+        color: #1f2937;
+        background-color: #e5e7eb;
+      }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/"
+      }
+    }
+    </script>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
