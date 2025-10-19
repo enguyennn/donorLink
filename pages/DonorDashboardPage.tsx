@@ -67,10 +67,10 @@ const DonorDashboardPage: React.FC<DonorDashboardPageProps> = ({ needs, shelters
   const ViewToggle = () => (
     <div className="lg:hidden fixed bottom-4 right-4 z-40">
         <div className="flex items-center bg-white rounded-full shadow-lg border">
-            <button onClick={() => setView('list')} className={`p-3 rounded-l-full transition-colors ${view === 'list' ? 'bg-brand-blue text-white' : 'text-gray-600'}`}>
+            <button onClick={() => setView('list')} className={`p-3 rounded-l-full transition-colors ${view === 'list' ? 'bg-brand-pink text-white' : 'text-gray-600'}`}>
                 <ListIcon className="h-6 w-6" />
             </button>
-            <button onClick={() => setView('map')} className={`p-3 rounded-r-full transition-colors ${view === 'map' ? 'bg-brand-blue text-white' : 'text-gray-600'}`}>
+            <button onClick={() => setView('map')} className={`p-3 rounded-r-full transition-colors ${view === 'map' ? 'bg-brand-pink text-white' : 'text-gray-600'}`}>
                 <MapIcon className="h-6 w-6" />
             </button>
         </div>
@@ -93,12 +93,12 @@ const DonorDashboardPage: React.FC<DonorDashboardPageProps> = ({ needs, shelters
               id="dashboard-search"
               value={localSearch}
               onChange={(e) => setLocalSearch(e.target.value)}
-              className="w-full px-5 py-3 placeholder-gray-500 focus:ring-brand-blue focus:border-brand-blue border-gray-300 rounded-l-md shadow-sm"
+              className="w-full px-5 py-3 placeholder-gray-500 focus:ring-brand-pink focus:border-brand-pink border-gray-300 rounded-l-md shadow-sm"
               placeholder="e.g. 'jackets', 'canned food', 'blankets'"
             />
             <button
               type="submit"
-              className="bg-brand-blue text-white px-6 py-3 border border-transparent rounded-r-md font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue transition-colors flex items-center"
+              className="bg-brand-pink text-white px-6 py-3 border border-transparent rounded-r-md font-medium hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-pink transition-colors flex items-center"
             >
               <SearchIcon className="h-5 w-5 mr-2 -ml-1" />
               Search
@@ -117,8 +117,8 @@ const DonorDashboardPage: React.FC<DonorDashboardPageProps> = ({ needs, shelters
                   onClick={() => setFilters(prev => ({...prev, itemType: type}))}
                   className={`px-4 py-2 text-sm font-medium rounded-full flex items-center gap-2 transition-all duration-200 border-2 ${
                     filters.itemType === type 
-                    ? 'bg-brand-blue text-white border-brand-blue shadow-md' 
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-brand-blue hover:text-brand-blue'
+                    ? 'bg-brand-pink text-white border-brand-pink shadow-md' 
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-brand-pink hover:text-brand-pink'
                   }`}
                 >
                   {type === 'all' ? <Squares2x2Icon className="h-5 w-5"/> : <ItemIcon itemType={type as ItemType} className="h-5 w-5"/>}
@@ -165,11 +165,11 @@ const DonorDashboardPage: React.FC<DonorDashboardPageProps> = ({ needs, shelters
             <div>
               <label className="text-sm font-semibold text-gray-500 mb-2 block">Sort By</label>
               <div className="flex flex-wrap gap-2">
-                <button onClick={() => setSortBy('urgency')} className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-full transition-colors border-2 min-w-[120px] ${sortBy === 'urgency' ? 'bg-brand-blue text-white border-brand-blue shadow' : 'bg-white text-gray-600 border-gray-200 hover:border-brand-blue hover:text-brand-blue'}`}>
+                <button onClick={() => setSortBy('urgency')} className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-full transition-colors border-2 min-w-[120px] ${sortBy === 'urgency' ? 'bg-brand-pink text-white border-brand-pink shadow' : 'bg-white text-gray-600 border-gray-200 hover:border-brand-pink hover:text-brand-pink'}`}>
                     <FlameIcon className="h-5 w-5" />
                     Urgency
                 </button>
-                <button onClick={() => setSortBy('distance')} className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-full transition-colors border-2 min-w-[120px] ${sortBy === 'distance' ? 'bg-brand-blue text-white border-brand-blue shadow' : 'bg-white text-gray-600 border-gray-200 hover:border-brand-blue hover:text-brand-blue'}`}>
+                <button onClick={() => setSortBy('distance')} className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-full transition-colors border-2 min-w-[120px] ${sortBy === 'distance' ? 'bg-brand-pink text-white border-brand-pink shadow' : 'bg-white text-gray-600 border-gray-200 hover:border-brand-pink hover:text-brand-pink'}`}>
                     <MapPinIcon className="h-5 w-5" />
                     Distance
                 </button>

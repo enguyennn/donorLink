@@ -29,7 +29,7 @@ const StatCard: React.FC<StatCardProps> = ({ label, value }) => {
 
   return (
     <div className="bg-gray-50 p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-      <p className="text-5xl font-extrabold text-brand-blue">{count.toLocaleString()}</p>
+      <p className="text-5xl font-extrabold text-brand-pink">{count.toLocaleString()}</p>
       <p className="mt-2 text-lg font-medium text-gray-600">{label}</p>
     </div>
   );

@@ -33,7 +33,7 @@ const FulfillRequestModal: React.FC<FulfillRequestModalProps> = ({ need, shelter
             </button>
           </div>
           
-          <p className="text-gray-600 mb-4">You are planning to donate <span className="font-semibold text-brand-blue">{need.name}</span>.</p>
+          <p className="text-gray-600 mb-4">You are planning to donate <span className="font-semibold text-brand-pink">{need.name}</span>.</p>
           
           <div className="mb-6">
             <label htmlFor="donation-quantity" className="block text-sm font-medium text-gray-700 text-center mb-2">How many units are you donating?</label>
@@ -60,7 +60,7 @@ const FulfillRequestModal: React.FC<FulfillRequestModalProps> = ({ need, shelter
                     }}
                     min="1"
                     max={need.quantity}
-                    className="w-20 text-center text-2xl font-bold border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue"
+                    className="w-20 text-center text-2xl font-bold border-gray-300 rounded-md shadow-sm focus:ring-brand-pink focus:border-brand-pink"
                     required
                 />
                 <button 
@@ -78,7 +78,7 @@ const FulfillRequestModal: React.FC<FulfillRequestModalProps> = ({ need, shelter
           <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <h3 className="font-bold text-gray-900">{shelter.name}</h3>
               <p className="text-sm text-gray-600">{shelter.address}, {shelter.city}, {shelter.state}</p>
-              <a href={gmapsUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-sm text-brand-blue hover:underline font-semibold">
+              <a href={gmapsUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-sm text-brand-pink hover:underline font-semibold">
                 <LocationMarkerIcon className="h-4 w-4" />
                 Get Directions
               </a>

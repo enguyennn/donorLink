@@ -28,11 +28,11 @@ const ShelterNeedCard: React.FC<ShelterNeedCardProps> = ({ need, shelter, onFulf
       <div className="p-6 flex-grow">
         <div className="flex justify-between items-start">
             <div className="flex items-center gap-3">
-                <div className="bg-blue-100 p-3 rounded-full">
-                    <ItemIcon itemType={need.itemType} className="h-6 w-6 text-brand-blue" />
+                <div className="bg-pink-100 p-3 rounded-full">
+                    <ItemIcon itemType={need.itemType} className="h-6 w-6 text-brand-pink" />
                 </div>
                 <div>
-                    <div className="tracking-wide text-sm text-brand-blue font-semibold">{need.itemType}</div>
+                    <div className="tracking-wide text-sm text-brand-pink font-semibold">{need.itemType}</div>
                     <p className="block mt-1 text-lg leading-tight font-bold text-black">{need.name}</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const ShelterNeedCard: React.FC<ShelterNeedCardProps> = ({ need, shelter, onFulf
         
         <p className="mt-4 text-gray-600">{need.description}</p>
         <div className="mt-4">
-            <p className="text-gray-800 font-semibold">Quantity Needed: <span className="font-bold text-brand-blue">{need.quantity}</span></p>
+            <p className="text-gray-800 font-semibold">Quantity Needed: <span className="font-bold text-brand-pink">{need.quantity}</span></p>
         </div>
       </div>
       <div className="px-6 pb-4 pt-2 border-t border-gray-100 bg-gray-50">

@@ -35,7 +35,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage, setSearchTerm, shel
         <div className="relative max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             <span className="block">Connecting those who have</span>
-            <span className="block text-sky-400">with those in need.</span>
+            <span className="block text-pink-400">with those in need.</span>
           </h1>
           <p className="mt-6 max-w-lg mx-auto text-xl text-gray-200">
             DonorLink is a bridge between your generosity and the urgent needs of local shelters. Find out how you can make a difference today.
@@ -48,12 +48,12 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage, setSearchTerm, shel
               id="search"
               value={localSearch}
               onChange={(e) => setLocalSearch(e.target.value)}
-              className="w-full px-5 py-3 placeholder-gray-500 focus:ring-brand-blue focus:border-brand-blue border-gray-300 rounded-md shadow-sm"
+              className="w-full px-5 py-3 placeholder-gray-500 focus:ring-brand-pink focus:border-brand-pink border-gray-300 rounded-md shadow-sm"
               placeholder="e.g. 'jackets', 'canned food', 'blankets'"
             />
             <button
               type="submit"
-              className="mt-3 w-full sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0 bg-brand-blue text-white px-6 py-3 border border-transparent rounded-md font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue transition-transform transform hover:scale-105"
+              className="mt-3 w-full sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0 bg-brand-pink text-white px-6 py-3 border border-transparent rounded-md font-medium hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-pink transition-transform transform hover:scale-105"
             >
               Find Needs
             </button>
@@ -71,8 +71,8 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage, setSearchTerm, shel
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             {/* Step 1 */}
             <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-brand-blue/10 mx-auto">
-                <SearchIcon className="h-8 w-8 text-brand-blue" />
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-brand-pink/10 mx-auto">
+                <SearchIcon className="h-8 w-8 text-brand-pink" />
               </div>
               <h3 className="mt-6 text-xl font-bold text-gray-900">1. Find a Need</h3>
               <p className="mt-2 text-gray-600">Search for specific items or browse real-time requests from local shelters right here in our community.</p>
@@ -111,7 +111,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage, setSearchTerm, shel
              <div className="text-center mt-12">
                 <button
                     onClick={() => setCurrentPage('donorDashboard')}
-                    className="bg-brand-blue text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue transition-transform transform hover:scale-105"
+                    className="bg-brand-pink text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-pink transition-transform transform hover:scale-105"
                 >
                     View All Needs & Filters
                 </button>

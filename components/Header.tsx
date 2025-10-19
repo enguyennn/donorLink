@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage, loggedInShelter, logout
   const NavLink: React.FC<{ page: Page; children: React.ReactNode }> = ({ page, children }) => (
     <button
       onClick={() => setCurrentPage(page)}
-      className="text-gray-600 hover:text-brand-blue transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium"
+      className="text-gray-600 hover:text-brand-pink transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium"
     >
       {children}
     </button>
@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage, loggedInShelter, logout
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <button onClick={() => setCurrentPage('home')} className="flex-shrink-0 flex items-center gap-2">
-              <LogoIcon className="h-8 w-8 text-brand-blue" />
+              <LogoIcon className="h-8 w-8 text-brand-pink" />
               <span className="font-bold text-xl text-gray-800">DonorLink</span>
             </button>
           </div>
@@ -37,12 +37,12 @@ const Header: React.FC<HeaderProps> = ({ setCurrentPage, loggedInShelter, logout
               {loggedInShelter ? (
                  <>
                     <NavLink page="shelterDashboard">My Dashboard</NavLink>
-                    <button onClick={logout} className="text-gray-600 hover:text-brand-blue transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Logout</button>
+                    <button onClick={logout} className="text-gray-600 hover:text-brand-pink transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Logout</button>
                  </>
               ) : (
                 <button
                     onClick={() => setCurrentPage('shelterLogin')}
-                    className="ml-4 bg-brand-blue text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-transform transform hover:scale-105"
+                    className="ml-4 bg-brand-pink text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-pink-600 transition-transform transform hover:scale-105"
                 >
                     For Shelters
                 </button>

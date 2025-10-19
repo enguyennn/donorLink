@@ -12,7 +12,7 @@ interface ShelterDashboardPageProps {
 
 const StatCard: React.FC<{ title: string, value: number, icon: React.ReactNode }> = ({ title, value, icon }) => (
     <div className="bg-white p-6 rounded-xl shadow-md flex items-center space-x-4">
-        <div className="bg-blue-100 p-3 rounded-full">
+        <div className="bg-pink-100 p-3 rounded-full">
             {icon}
         </div>
         <div>
@@ -81,7 +81,7 @@ const ShelterDashboardPage: React.FC<ShelterDashboardPageProps> = ({ shelter, ne
     const StatusButton: React.FC<{status: Status}> = ({ status }) => {
         const base = "px-2 py-0.5 text-xs font-semibold rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
         const styles = {
-            [Status.Active]: "bg-blue-100 text-blue-800 hover:bg-blue-200",
+            [Status.Active]: "bg-pink-100 text-pink-800 hover:bg-pink-200",
             [Status.Pending]: "bg-yellow-100 text-yellow-800 hover:bg-yellow-200",
             [Status.Fulfilled]: "bg-green-100 text-green-800 hover:bg-green-200"
         }
@@ -103,7 +103,7 @@ const ShelterDashboardPage: React.FC<ShelterDashboardPageProps> = ({ shelter, ne
     }
 
     return (
-      <div className={`bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all ${isEditing ? 'ring-2 ring-brand-blue shadow-lg' : 'hover:shadow-md'}`}>
+      <div className={`bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all ${isEditing ? 'ring-2 ring-brand-pink shadow-lg' : 'hover:shadow-md'}`}>
           <div className="flex justify-between items-start">
               <div>
                   <p className="font-bold text-gray-800">{need.name}</p>
@@ -115,7 +115,7 @@ const ShelterDashboardPage: React.FC<ShelterDashboardPageProps> = ({ shelter, ne
                                 type="number"
                                 value={editedQuantity}
                                 onChange={(e) => setEditedQuantity(Number(e.target.value))}
-                                className="w-16 text-center border-gray-300 rounded-md shadow-sm text-sm focus:ring-brand-blue focus:border-brand-blue"
+                                className="w-16 text-center border-gray-300 rounded-md shadow-sm text-sm focus:ring-brand-pink focus:border-brand-pink"
                                 min="1"
                                 autoFocus
                             />
@@ -173,13 +173,13 @@ const ShelterDashboardPage: React.FC<ShelterDashboardPageProps> = ({ shelter, ne
 
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <StatCard title="Active Needs" value={activeNeeds.length} icon={<ChartBarIcon className="h-6 w-6 text-brand-blue" />} />
-                <StatCard title="Pending Donations" value={pendingNeeds.length} icon={<ClockIcon className="h-6 w-6 text-brand-blue" />} />
-                <StatCard title="Fulfilled Needs" value={fulfilledNeeds.length} icon={<CheckCircleIcon className="h-6 w-6 text-brand-blue" />} />
+                <StatCard title="Active Needs" value={activeNeeds.length} icon={<ChartBarIcon className="h-6 w-6 text-brand-pink" />} />
+                <StatCard title="Pending Donations" value={pendingNeeds.length} icon={<ClockIcon className="h-6 w-6 text-brand-pink" />} />
+                <StatCard title="Fulfilled Needs" value={fulfilledNeeds.length} icon={<CheckCircleIcon className="h-6 w-6 text-brand-pink" />} />
             </div>
 
             <div className="mb-8">
-                <button onClick={() => setShowForm(!showForm)} className="bg-brand-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition-transform transform hover:scale-105 shadow-sm hover:shadow-lg">
+                <button onClick={() => setShowForm(!showForm)} className="bg-brand-pink text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-600 transition-transform transform hover:scale-105 shadow-sm hover:shadow-lg">
                 {showForm ? 'Cancel' : '+ Post a New Need'}
                 </button>
                 {showForm && (
@@ -188,29 +188,29 @@ const ShelterDashboardPage: React.FC<ShelterDashboardPageProps> = ({ shelter, ne
                     <h3 className="text-xl font-semibold text-gray-800">New Need Details</h3>
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">Item Name</label>
-                        <input type="text" name="name" id="name" value={formData.name} onChange={handleInputChange} required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue" placeholder="e.g., Winter Coats" />
+                        <input type="text" name="name" id="name" value={formData.name} onChange={handleInputChange} required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-pink focus:border-brand-pink" placeholder="e.g., Winter Coats" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
                             <label htmlFor="itemType" className="block text-sm font-medium text-gray-700">Category</label>
-                            <select name="itemType" id="itemType" value={formData.itemType} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                            <select name="itemType" id="itemType" value={formData.itemType} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-pink focus:border-brand-pink">
                                 {Object.values(ItemType).map(t => <option key={t} value={t}>{t}</option>)}
                             </select>
                         </div>
                         <div>
                             <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">Quantity</label>
-                            <input type="number" name="quantity" id="quantity" value={formData.quantity} onChange={handleInputChange} required min="1" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue" />
+                            <input type="number" name="quantity" id="quantity" value={formData.quantity} onChange={handleInputChange} required min="1" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-pink focus:border-brand-pink" />
                         </div>
                         <div>
                             <label htmlFor="urgency" className="block text-sm font-medium text-gray-700">Urgency</label>
-                            <select name="urgency" id="urgency" value={formData.urgency} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue">
+                            <select name="urgency" id="urgency" value={formData.urgency} onChange={handleInputChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-pink focus:border-brand-pink">
                                 {Object.values(Urgency).map(u => <option key={u} value={u}>{u}</option>)}
                             </select>
                         </div>
                     </div>
                     <div>
                         <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
-                        <textarea name="description" id="description" value={formData.description} onChange={handleInputChange} required rows={3} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-blue focus:border-brand-blue" placeholder="Add any details like sizes, brands, or specific requirements."></textarea>
+                        <textarea name="description" id="description" value={formData.description} onChange={handleInputChange} required rows={3} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-brand-pink focus:border-brand-pink" placeholder="Add any details like sizes, brands, or specific requirements."></textarea>
                     </div>
                     <button type="submit" className="bg-brand-green text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600">Post Need</button>
                     </form>
@@ -220,8 +220,8 @@ const ShelterDashboardPage: React.FC<ShelterDashboardPageProps> = ({ shelter, ne
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Active Needs Column */}
-                <div className="bg-blue-50/50 rounded-xl p-4">
-                  <h2 className="text-xl font-bold text-blue-800 border-b-2 border-blue-200 pb-2 mb-4">Active Needs</h2>
+                <div className="bg-pink-50/50 rounded-xl p-4">
+                  <h2 className="text-xl font-bold text-pink-800 border-b-2 border-pink-200 pb-2 mb-4">Active Needs</h2>
                   <div className="space-y-3">
                     {activeNeeds.length > 0 ? activeNeeds.map(n => <NeedRow key={n.id} need={n} />) : <p className="text-gray-500 p-4 text-center">No active needs.</p>}
                   </div>
